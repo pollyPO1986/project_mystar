@@ -1,0 +1,51 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li.active 常見問題
+
+block sidenav
+	ul.mem_sidenav.faq.hidden-sm.hidden-xs
+		li
+			h3 常見問題
+		li.on
+			a(href="javascript:;") 分類一
+		li
+			a(href="javascript:;") 分類二
+
+	ul.mem_sidenav.faq.hidden-lg.hidden-md
+		li
+			h3 常見問題
+		li
+			select.form-control.selectpicker(data-style='btn_linestyle', onchange='location.href=this.options[this.selectedIndex].value')
+				option(value='fun_faq.html') 分類一
+				option(value='fun_faq.html') 分類二
+
+block content
+	.title
+		h2 分類一
+	
+	ul.faq_list
+		li.active
+			h3 標題標題
+			.faq_content
+				p 長常家古建明必星常和，總親因有年；來西漸都注已價排很賽情三認之臺八代倒源害。
+				p 仍多書，飛去功再好不經信打朋共辦冷景人，夜家談好女學位屋重弟是企經列吃。方助指不東，小稱笑；統有便便的就第容養有都為居手說光二我在的家足系笑色入。心該友上西勢老層容！為市此日其血相我感……己個服於色給童種數停了格感樂相地聯子……美變代陸出政位發了不隊！我就國山前當方力，益山的，輪食市相力況收！策案然商向師小！色基演實特兒北明這關山一資無們朋車始已你禮人發性。
+		li
+			h3 標題標題
+			.faq_content
+				ol
+					li 這於常一一主和起了筆來史……標壓他系際兒年小部不起，一起精帶個就……利院稱。
+					li 少馬情少會爾從，國排國一後難大座決對營關的而合工自國財，規室燈心年。
+					li 個定人！落我學部少深。險女輪害清治大身蘭使毛痛人，用應。
+		li
+			h3 標題標題
+			.faq_content
+				p 長常家古建明必星常和，總親因有年；來西漸都注已價排很賽情三認之臺八代倒源害。
+				p 仍多書，飛去功再好不經信打朋共辦冷景人，夜家談好女學位屋重弟是企經列吃。方助指不東，小稱笑；統有便便的就第容養有都為居手說光二我在的家足系笑色入。心該友上西勢老層容！為市此日其血相我感……己個服於色給童種數停了格感樂相地聯子……美變代陸出政位發了不隊！我就國山前當方力，益山的，輪食市相力況收！策案然商向師小！色基演實特兒北明這關山一資無們朋車始已你禮人發性。
+
+block lightbox
+	//- lightbox
+		

@@ -1,0 +1,35 @@
+extend layout/_layout.jade
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active 重設密碼
+block content
+	.col-xs-12.col-md-10.col-md-offset-1
+		.title.news
+			h2 重設密碼
+		form.form-horizontal.contact_form
+			.form-group
+				label.col-sm-3.col-md-2.control-label(for='')
+					span.beige * 
+					| 輸入新密碼
+				.col-sm-9.col-md-10
+					input.form-control(type='password', id='', placeholder='')
+			.form-group
+				label.col-sm-3.col-md-2.control-label(for='')
+					span.beige * 
+					| 再次輸入新密碼
+				.col-sm-9.col-md-10
+					input.form-control(type='password', id='', placeholder='')
+			.form-group
+				.col-sm-offset-3.col-sm-9.col-md-offset-2.col-md-10
+					button.btn.btn-block.btn_black(type='submit') 確認送出
+
+
+block lightbox
+	//- lightbox
+		

@@ -1,0 +1,111 @@
+extend layout/_layout.jade
+
+
+block top_content
+block content
+	.col-xs-12
+		.title
+			h2 訂購資訊
+
+		form.login_form(role='form', method='POST')
+			ul.list_tablestyle
+				li 訂購人資訊
+				li(data-tit='姓　　名：')
+					input.form-control(type='text', id='', name='', placeholder='請輸入您的大名')
+				li(data-tit='行動電話：')
+					input.form-control(type='number', id='', name='', placeholder='EX：0911456789')
+				li(data-tit='市　　話：')
+					input.form-control(type='number', id='', name='', placeholder='')
+				li(data-tit='地　　址：')
+					select.form-control.selectpicker(data-style='btn_linestyle')
+						option 台中市
+						option 台北市
+						option 高雄市
+					select.form-control.selectpicker(data-style='btn_linestyle')
+						option 中區
+						option 西區
+						option 西屯區
+					input.form-control(type='text', id='', name='', placeholder='')
+
+			ul.list_tablestyle
+				li 收貨人資訊
+					.checkbox-inline
+						label
+							input(type='checkbox')
+							i.fa.fa-check(aria-hidden='true')
+							| 同訂購人
+				li(data-tit='姓　　名：')
+					input.form-control(type='text', id='', name='', placeholder='請輸入您的大名')
+					// 選擇超商時，此欄位多顯示下方訊息 
+					small.grey 請提供與身份證件相同之真實姓名，以便取貨時供超商店員核對
+				li(data-tit='行動電話：')
+					input.form-control(type='number', id='', name='', placeholder='EX：0911456789')
+				li(data-tit='市　　話：')
+					input.form-control(type='number', id='', name='', placeholder='')
+				li(data-tit='地　　址：')
+					// 選擇宅配時
+					select.form-control.selectpicker(data-style='btn_linestyle')
+						option 台中市
+						option 台北市
+						option 高雄市
+					select.form-control.selectpicker(data-style='btn_linestyle')
+						option 中區
+						option 西區
+						option 西屯區
+					input.form-control(type='text', id='', name='', placeholder='')
+					// 選擇超商時，此欄位直接顯示門市資訊
+
+			ul.list_tablestyle
+				li 發票類型
+				li(data-tit='發票類型：')
+					label.radio-inline(for='2')
+						input(type='radio',id='2', name='invoice', value='')
+						i.fa.fa-circle(aria-hidden='true')
+						|  二聯式
+					label.radio-inline(for='3')
+						input(type='radio',id='3', name='invoice', value='')
+						i.fa.fa-circle(aria-hidden='true')
+						|  三聯式
+				li(data-tit='寄送方式：')
+					label.radio-inline(for='01')
+						input(type='radio',id='01', name='invoice', value='')
+						i.fa.fa-circle(aria-hidden='true')
+						|  同訂購人地址
+					label.radio-inline(for='02')
+						input(type='radio',id='02', name='invoice', value='')
+						i.fa.fa-circle(aria-hidden='true')
+						|  同收貨人地址
+					label.radio-inline(for='03')
+						input(type='radio',id='03', name='invoice', value='')
+						i.fa.fa-circle(aria-hidden='true')
+						|  寄送指定地址
+				li(data-tit='寄送資訊：')
+					.sendinfo
+						span
+							label(for='') 姓名：
+							input.form-control(type='text', id='', name='', placeholder='請輸入收信人姓名')
+						span
+							label(for='') 地址：
+							select.form-control.selectpicker(data-style='btn_linestyle')
+								option 台中市
+								option 台北市
+								option 高雄市
+							select.form-control.selectpicker(data-style='btn_linestyle')
+								option 中區
+								option 西區
+								option 西屯區
+							input.form-control(type='text', id='', name='', placeholder='')
+
+			ul.list_tablestyle
+				li 付款方式
+				li(data-tit='付款方式：')
+					select.form-control.selectpicker(data-style='btn_linestyle')
+						option 線上刷卡
+						option ATM轉帳
+		.cart_checkbox
+			p
+				a.btn.btn_black(role='button', href='cart.html') 上一步
+				a.btn.btn_black(role='button', href='checkout.html') 確認訂單
+
+block lightbox
+	//- lightbox

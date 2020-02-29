@@ -1,0 +1,93 @@
+header
+	h2(style='display:none;') Mystar 主選單
+	nav
+		.navbar_topnav
+			.container
+				.row
+					.col-xs-6.col-sm-4.col-lg-3
+						ul.top_navlist
+							li
+								a(href="skincare.html") 
+									i.fi.flaticon-search
+									span 肌膚檢測
+							li
+								a(href="contact.html")
+									i.fi.flaticon-bubble
+									span 聯絡我們
+					.col-xs-6.col-sm-4.col-sm-offset-4.col-lg-3.col-lg-offset-6
+						ul.top_navlist.rights
+							li
+								a(href="topnav_login.html") 
+									i.fi.flaticon-user
+									span 會員登入
+							li
+								a(href="cart.html")
+									i.fi.flaticon-cart
+									span 購物車
+		// table menu
+		.table_nav.visible-lg.visible-md
+			.container
+				.row
+					h2(style='display: none;') 草山境-主選單
+					.col-lg-12.text-center
+						a.logo(href='index.html')
+							h1(style='background-image:url(images/logo.svg);')
+						.searchbox
+							form.search
+								input.form-control(type='search', placeholder='Search')
+								button.btn.btn_icons(type='submit')
+									i.fi.flaticon-search
+						ul.navbar_pc.clearfix
+							li.active
+								a(href='nav_story.html') 品牌故事
+							li
+								a(href='news.html') 最新消息
+							li
+								a(href='products.html') 清潔系列
+							li
+								a(href='products.html') 保濕系列
+							li
+								a(href='products.html') 淨痘系列
+							li
+								a(href='products.html') 柔敏系列
+							li
+								a(href='products.html') 抗皺系列
+							li
+								a(href='products.html') 嫩白系列
+		// mobile menu
+		.mobile_nav.hidden-lg.hidden-md
+			.navbar-header
+				#toggle.button_container
+					span.top
+					span.middle
+					span.bottom
+				a.navbar-brand(href='index.html')
+					img.img-responsive(src='images/logo.svg', alt='Mystar LOGO')
+			#overlay.overlay
+				nav.overlay-menu
+					ul
+						li
+							a(href='textedit.html') 品牌故事
+						li
+							a(href='news.html') 最新消息
+						li
+							a(href='products.html') 清潔系列
+						li
+							a(href='products.html') 保濕系列
+						li
+							a(href='products.html') 淨痘系列
+						li
+							a(href='products.html') 柔敏系列
+						li
+							a(href='products.html') 抗皺系列
+						li
+							a(href='products.html') 嫩白系列
+						li
+							a(href='skincare.html') 如何選購
+						li
+							.searchbox
+								form.search
+									input.form-control(type='text', placeholder='Search')
+									button.btn.btn_icons(type='submit')
+										i.fi.flaticon-search
+

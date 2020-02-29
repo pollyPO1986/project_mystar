@@ -1,0 +1,116 @@
+extend layout/_layout.jade
+
+mixin cart(pic,name,sub,price)
+	tr
+		td
+			.keep_img
+				a(href="products_detail.html",style=pic)
+		td.pic-box
+			.caption
+				a(href="products.html")
+					h3=name
+				p.sub=sub
+		td
+			p.any_price(data-mark='NT$')=price
+		td 1
+		td
+			p.any_price(data-mark='NT$')=price
+
+block top_content
+block content
+	.col-xs-12
+		.title
+			h2 訂購資訊
+		p.mi.red.mt20.mb20.visible-xs 以下所有表格皆可以左右滑動觀看資料
+		.table-responsive
+			table.table.cart_tb(data-toggle-column="first")
+				thead
+					tr
+						th 商品照
+						th(data-breakpoints='xs') 商品名稱
+						th(data-breakpoints='xs sm') 價格
+						th(data-breakpoints='xs') 數量
+						th(data-breakpoints='xs') 小計
+				tbody
+					+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+					+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+				tfoot
+					tr
+						td(colspan="5")
+							ul.cart_checkout
+								li 小計
+								li
+									p.any_price(data-mark="NT$") 6,000
+					tr
+						td(colspan="5")
+							ul.cart_checkout
+								li
+									i.check.checkgreen
+									| 符合活動折扣
+								li
+									p.any_price(data-mark="-NT$") 200
+					tr
+						td(colspan="5")
+							ul.cart_checkout
+								li
+									span 美麗金折抵
+									small.grey (您的美麗金最高可折抵
+										sapn.any_price(data-mark="-NT$") 50
+										| )
+								li
+									p.any_price(data-mark="-NT$") 50
+					tr
+						td(colspan="5")
+							ul.cart_checkout
+								li
+									// (店到店)
+									p.beige 超商 (全家)
+									small.grey 全家豐原真樂店　台中市豐原區豐勢路二段787號
+
+								li
+									p.any_price(data-mark="+NT$") 65
+					tr
+						td(colspan="5")
+							ul.cart_checkout
+								li 合計
+								li
+									p.red.any_price(data-mark="NT$") 5,815
+		form.login_form.checkout_f(role='form', method='POST')
+			ul.list_tablestyle
+				li 兌換券
+				li 高級SPA券一張
+
+			ul.list_tablestyle
+				li 訂購人資訊
+				li(data-tit='姓　　名：') 王大明
+				li(data-tit='行動電話：') 0911659874
+				li(data-tit='市　　話：')
+				li(data-tit='地　　址：') 台中市 西屯區 台灣大道三段540號七樓之二
+
+			ul.list_tablestyle
+				li 收貨人資訊
+					.checkbox-inline
+						label
+							input(type='checkbox', checked)
+							i.fa.fa-check(aria-hidden='true')
+							| 同訂購人
+				li(data-tit='姓　　名：') 王大明
+				li(data-tit='行動電話：') 0911659874
+				li(data-tit='市　　話：')
+				li(data-tit='地　　址：') 全家豐原真樂店　台中市豐原區豐勢路二段787號
+
+			ul.list_tablestyle
+				li 發票類型
+				li(data-tit='發票類型：') 二聯式
+				li(data-tit='寄送方式：') 訂購人地址
+
+			ul.list_tablestyle
+				li 付款方式
+				li(data-tit='付款方式：') 線上刷卡
+		.cart_checkbox
+			p
+				a.btn.btn_black(role='button', href='paymant.html') 上一步
+				a.btn.btn_black(role='button', href='javascript:;') 我要結帳
+
+block lightbox
+	//- lightbox

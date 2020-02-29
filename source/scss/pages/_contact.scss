@@ -1,0 +1,227 @@
+// contact
+
+.contact_form {
+    margin: 30px 0 0;
+    .form-group>.control-label {
+        font-weight: 400;
+        @include table-up-width {
+            text-align: left;
+        }
+    }
+    
+    label {
+    		font-weight: 400;
+    }
+
+    span {
+        vertical-align: sub;
+        margin-right: 5px;
+    }
+
+    input,
+    button.btn_grey,
+    textarea {
+        outline: 0;
+        border: none;
+        box-shadow: none;
+        background: lighten($grey, 37%);
+        &:focus {
+            outline: 0;
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    textarea {
+        overflow-x: hidden;
+    }
+
+     ::-webkit-input-placeholder {
+        @include rem(font-size, 1.3rem);
+    }
+
+     :-ms-input-placeholder {
+        @include rem(font-size, 1.3rem);
+    }
+
+     ::-moz-placeholder {
+        @include rem(font-size, 1.3rem);
+    }
+
+     :-moz-placeholder {
+        @include rem(font-size, 1.3rem);
+    }
+}
+
+// login
+.login {
+    margin: 30px 0 0;
+    @include table-up-width {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    li {
+        +li {
+            border-left: 1px solid lighten($grey, 25%);
+            @include table-up-width {
+                padding-left: 150px;
+            }
+            @include table-width {
+                padding-left: 80px;
+            }
+        }
+    }
+    .titlebar {
+        h3 {
+            @include rem(font-size, 2.4rem);
+            font-weight: 400;
+        }
+    }
+}
+
+.login_form {
+     ::-webkit-input-placeholder {
+        color: lighten($grey, 25%);
+    }
+
+     :-ms-input-placeholder {
+        color: lighten($grey, 25%);
+    }
+
+     ::-moz-placeholder {
+        color: lighten($grey, 25%);
+    }
+
+     :-moz-placeholder {
+        color: lighten($grey, 25%);
+    }
+
+    p {
+        letter-spacing: 1px;
+    }
+
+    input,
+    button.btn_linestyle {
+        outline: 0;
+        box-shadow: none;
+        border-color: lighten($grey, 25%);
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+
+    .forget {
+        margin-top: 5px;
+        a {
+            display: inline-block;
+            @include rem(font-size, 1.3rem);
+            &:after {
+                content: '';
+                display: block;
+                padding-top: 2px;
+                border-bottom: 1px solid $black;
+            }
+            &:hover:after {
+                border-bottom: 1px solid $darkbeige;
+            }
+        }
+    }
+
+    .form-group+p {
+        margin: 20px 0;
+    }
+
+    .btn {
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+        i {
+            margin-right: 8px;
+            @include rem(font-size, 2.0rem);
+        }
+    }
+
+    .btn-block+.btn-block {
+        margin-top: 15px;
+    }
+
+    .btn_black {
+        padding: 8px;
+    }
+
+    .btn_facebook {
+        color: $white;
+        background-color: $facebook;
+        border-color: $facebook;
+        transition: all 0.3s ease-in-out;
+        &:hover,
+        &:focus {
+            background-color: darken($facebook, 5%);
+            border-color: darken($facebook, 5%);
+        }
+    }
+
+    .btn_google {
+        color: $white;
+        background-color: $google;
+        border-color: $google;
+        transition: all 0.3s ease-in-out;
+        &:hover,
+        &:focus {
+            background-color: darken($google, 5%);
+            border-color: darken($google, 5%);
+        }
+    }
+
+    small a {
+        color: $darkbeige;
+        &:hover {
+            color: darken($darkbeige, 5%);
+        }
+    }
+}
+
+.mobi_login {
+    .login_tabs {
+        li {
+            @include phone-width {
+                float: left;
+                width: 50%;
+            }
+            &.active {
+                a {
+                    background: $darkbeige;
+                    border-color: $darkbeige;
+                    color: $white;
+                    // @include phone-width {
+                    //     border-bottom: none !important;
+                    // }
+                }
+            }
+            a {
+                background: $white;
+                border: 1px solid lighten($grey, 25%);
+                color: $black;
+                @include phone-width {
+                    margin-bottom: 0;
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+            +li {
+            		>a {
+            				border-left-color: transparent;
+            		}
+            }
+        }
+    }
+    .tab-content {
+        background: $white;
+        border-width: 0 1px 1px 1px;
+        border-style: solid;
+        border-color: transparent lighten($grey, 25%) lighten($grey, 25%) lighten($grey, 25%);
+        padding: 30px 20px 20px;
+    }
+}

@@ -1,0 +1,36 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li
+			a(href='javascript:;') 會員中心
+		li.active 美麗金使用說明
+
+block sidenav
+	include include/_member_sidenav.jade
+
+block content
+	.title
+		h2 美麗金使用說明
+	ol.beauty_list
+		li 
+			p 實際結帳金額的10%即列入該會員專用之美麗金帳戶(無消費金額限制)
+		li 
+			p 美麗金可折抵每次購物金額的15%
+		li 
+			p 加入新會員即贈1000元美麗金
+		li 
+			p 會員生日禮即送1000元
+		li 
+			p 推薦禮各得500元美麗金（需推薦者註冊成正式會員後產生會員專屬的推薦碼，會顯示在會員中心的會員資料管理內。
+			p 被推薦者在註冊成正式會員時須輸入該推薦碼並完成註冊，推薦者與被推薦者皆可同時獲得500元美麗金）
+		li 
+			p 訂閱電子報200元
+		li 
+			p 其他特色活動(像光棍節時購物美麗金加倍送等等)
+
+block lightbox
+	//- lightbox
+		

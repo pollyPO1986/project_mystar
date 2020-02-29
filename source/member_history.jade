@@ -1,0 +1,171 @@
+extend layout/_layout_side_l.jade
+
+mixin order(time,no,state,price,pay)
+	tr
+		td
+		td=time
+		td
+			a.underline(href='javascript:;', data-toggle="modal", data-target=".order_history")=no
+		td=state
+		td=price
+		td=pay
+		td
+			a.underline(data-fancybox, data-src="#returns", href="javascript:;") 我要退貨
+
+mixin cart(pic,name,sub,price)
+	tr
+		td
+			.keep_img
+				a(href="products_detail.html",style=pic)
+		td.pic-box
+			.caption
+				a(href="products.html")
+					h3=name
+				p.sub=sub
+		td
+			p.any_price(data-mark='NT$')=price
+		td 1
+		td
+			p.any_price(data-mark='NT$')=price
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li
+			a(href='javascript:;') 會員中心
+		li.active 消費訂單紀錄
+
+block sidenav
+	include include/_member_sidenav.jade
+
+block content
+	.title
+		h2 消費訂單紀錄
+	.row.mb30
+		.col-sm-8.col-lg-9
+			ul.color-box.order_tatol
+				li 您累積結單消費金額
+				li 10,000
+		.col-sm-4.col-lg-3
+			.order_search
+				.input-group
+					input.form-control(type='text', placeholder='請輸入訂單編號')
+					span.input-group-btn
+						button.btn.btn_black(type='button')
+							i.fi.flaticon-search
+	p.mb10 目前會員等級：新進會員，升級至「VIP會員」還需累計消費：5,000
+	table.table.tablestyle.mem_tb.order_tb(data-toggle-column="first")
+		thead
+			tr
+				th(data-visible="false")
+				th(data-breakpoints='xs') 時間
+				th 編號
+				th 狀態
+				th 金額
+				th(data-breakpoints='xs') 付款方式
+				th(data-breakpoints='xs') 退貨
+		tbody
+			+order('2018-01-23','00001','已完成付款','3,000','信用卡(一次付清)')
+			+order('2018-01-23','00002','訂單已完成','3,000','ATM轉帳')
+
+
+block lightbox
+	//- lightbox
+	.modal.fade.order_history(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-lg.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 訂單編號 00001
+				.modal-body
+					p.mi.red.mt20.mb20.visible-xs 以下所有表格皆可以左右滑動觀看資料
+					.table-responsive.mt20
+						table.table.mem_tb.history
+							tr
+								th 訂購日期
+								td 2017-10-18
+								th 訂購會員
+								td 王大明
+								th 訂單狀態
+								td(colspan="3") 待付款
+							tr
+								th 付款時間
+								td 2017-12-28 23:38
+								th 付款期限
+								td 2017-12-29 23:59
+								th 付款資訊
+								td(colspan="3") 銀行代碼：005
+									br
+									|虛擬帳戶：5219-8013-4515-3413
+							tr
+								th 出貨時間
+								td 2018-01-01 09:52
+								th 取消時間
+								td ---
+								th 取消原因
+								td(colspan="3") ---
+							tr
+								th 商品金額
+								td 
+									p.any_price(data-mark="NT$") 4,000
+								th 美麗金折扣
+								td ---
+								th 運費
+								td
+									p.any_price(data-mark="NT$") 250
+								th 總訂單金額
+								td 
+									p.any_price.red(data-mark="NT$") 4,250
+							tr
+								th 付款方式
+								td 線上刷卡
+								th 運送方式
+								td 店到店
+								th 包裹單號
+								td(colspan="3") 1234567890
+							tr
+								th 收貨人
+								td 王大明
+								th 收貨人電話
+								td 0912-345678
+								th 收件地址
+								td(colspan="3") 7-11 風和門市
+							tr
+								th 備註：
+								td(colspan='7') 送貨前請電聯
+					h4 商品明細
+					p.mi.red.mt20.mb20.visible-xs 以下所有表格皆可以左右滑動觀看資料
+					.table-responsive.mt20
+						table.table.cart_tb.history
+							thead
+								tr
+									th 商品照
+									th 商品名稱
+									th 價格
+									th 數量
+									th 小計
+							tbody
+								+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+								+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+				
+
+	#returns(style="display: none;")
+		form.contact_form
+			.form-group
+				label(for='')
+					span.beige * 
+					| 退貨原因
+				select.form-control.selectpicker(data-style='btn_grey')
+					option 商品瑕疵
+					option 運送損壞
+					option 配送錯誤
+					option 其他(自行填寫)
+			.form-group
+				label(for='')
+					span.beige * 
+					| 退貨說明
+				textarea.form-control(rows="5")
+			.form-group
+				button.btn.btn-block.btn_black(type='submit') 確認退貨

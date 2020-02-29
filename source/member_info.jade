@@ -1,0 +1,92 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li
+			a(href='javascript:;') 會員中心
+		li.active 會員資料管理
+
+block sidenav
+	include include/_member_sidenav.jade
+
+block content
+	.title
+		h2 會員資料管理
+	p.red.mi.mt10.mb10 手機驗證成為正式會員，始可享受美麗金購物優惠
+	.mem_userdata
+		.mem_tabs
+			ul.nav.nav-tabs.nav-justified(role='tablist')
+				li.active(role='presentation')
+					a(href='#member_user', aria-controls='member_user', role='tab', data-toggle='tab') 基本資料設定
+				li(role='presentation')
+					a(href='#password', aria-controls='password', role='tab', data-toggle='tab') 密碼修改
+		.tab-content
+			#member_user.tab-pane.active(role='tabpanel')
+				ul.list_tablestyle
+					li(data-tit='電子信箱') mystar@mystar.com
+					li(data-tit='手機帳號') 
+						select.form-control.selectpicker(data-style='btn_linestyle')
+							option 台灣(+886)
+							option 中國(+86)
+							option 台灣(+886)
+					li(data-tit='手機驗證') 
+						input.form-control(type='text', id='', name='', placeholder='')
+						button.btn.btn_black(type='button') 取得驗證碼
+					li(data-tit='姓名')
+						input.form-control(type='text', id='', name='', placeholder='')
+						label.radio-inline(for='2')
+							input(type='radio',id='2', name='invoice', value='')
+							i.fa.fa-circle(aria-hidden='true')
+							|  女
+						label.radio-inline(for='3')
+							input(type='radio',id='3', name='invoice', value='')
+							i.fa.fa-circle(aria-hidden='true')
+							|  男
+					li(data-tit='生日')
+						select.form-control.selectpicker(data-style='btn_linestyle')
+							option 年
+						select.form-control.selectpicker(data-style='btn_linestyle')
+							option 月
+						select.form-control.selectpicker(data-style='btn_linestyle')
+							option 日
+					li(data-tit='地址') 
+						select.form-control.selectpicker(data-style='btn_linestyle')
+							option 台中市
+							option 台北市
+							option 高雄市
+						select.form-control.selectpicker(data-style='btn_linestyle')
+							option 中區
+							option 西區
+							option 西屯區
+						input.form-control(type='text', id='', name='', placeholder='')
+					li(data-tit='訂閱電子報') 
+						label.radio-inline(for='2')
+							input(type='radio',id='2', name='invoice', value='')
+							i.fa.fa-circle(aria-hidden='true')
+							|  我要訂閱
+						label.radio-inline(for='3')
+							input(type='radio',id='3', name='invoice', value='')
+							i.fa.fa-circle(aria-hidden='true')
+							|  不要訂閱
+					li(data-tit='如何得知') 
+						select.form-control.selectpicker(data-style='btn_linestyle',data-width="250px")
+							option -----
+				p.text-center
+					button.btn.btn_black(type='submit') 送出資料
+			#password.tab-pane(role='tabpanel')
+				ul.list_tablestyle
+					li(data-tit='請輸入舊密碼：') 
+						input.form-control(type='password', id='', name='', placeholder='')
+					li(data-tit='輸入新密碼：') 
+						input.form-control(type='password', id='', name='', placeholder='')
+					li(data-tit='再次輸入新密碼：') 
+						input.form-control(type='password', id='', name='', placeholder='')
+
+				p.text-center
+					button.btn.btn_black(type='submit') 確認修改
+				
+block lightbox
+	//- lightbox
+		

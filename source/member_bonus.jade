@@ -1,0 +1,61 @@
+extend layout/_layout_side_l.jade
+
+mixin bouns_tatol(coin,stard,end,anything)
+	tr
+		td=coin
+		td=stard
+		td=end
+		td=anything
+
+mixin bouns_use(coin,usetime,anything)
+	tr
+		td=coin
+		td=usetime
+		td=anything
+
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li
+			a(href='javascript:;') 會員中心
+		li.active 購物金(紅利點數)
+
+block sidenav
+	include include/_member_sidenav.jade
+
+block content
+	.title
+		h2 購物金(紅利點數)
+	ul.color-box.bouns_tatol
+		li 購物金總計
+		li 300點
+	p.mi.red.mt20.mb10.visible-xs 以下所有表格皆可以左右滑動觀看資料
+	.table-responsive
+		table.table.mem_tb.bouns_add_tb
+			caption 購物金總明細
+			thead
+				tr
+					th 購物金
+					th 生效日
+					th 到期日
+					th 說明
+			tbody
+				+bouns_tatol('200','2017-12-25','2018-01-01','活動贈送')
+				+bouns_tatol('50','2017-10-04','2018-01-01','推薦')
+	.table-responsive
+		table.table.mem_tb.bouns_use_tb
+			caption 購物金使用明細
+			thead
+				tr
+					th 購物金
+					th 使用時間
+					th 說明
+			tbody
+				+bouns_use('34','2017-11-18','美麗金折抵')
+				+bouns_use('102','2017-06-18','美麗金折抵')
+
+block lightbox
+	//- lightbox
+		

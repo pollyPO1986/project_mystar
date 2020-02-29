@@ -1,0 +1,480 @@
+@supports (-webkit-overflow-scrolling: touch) {
+  // body{ cursor:pointer; }
+}
+
+* {
+    outline: none;
+    outline-color: transparent;
+    outline-style: none;
+}
+
+body {
+    background-color: $white;
+    font-family: "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+    color: $black;
+}
+
+::selection {
+    background: rgba(0, 0, 0, .5);
+    color: $white;
+    text-shadow: none;
+}
+
+a {
+    color: $black;
+    transition: color .2s linear;
+    &:link {
+        text-decoration: none;
+    } //-還沒被訪問的樣式
+    &:active {
+        text-decoration: none;
+    } //-滑鼠按下的樣式
+    &:visited {
+        text-decoration: none;
+    } //-被訪問過的樣式
+    &:hover {
+        text-decoration: none;
+        color: $darkbeige;
+    } //-滑鼠滑過的樣式
+    &:focus {
+        text-decoration: none;
+        color: $darkbeige;
+    } //-鍵盤聚焦的樣式
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+::-webkit-input-placeholder {
+    //- Chrome
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+    //- IE 10+
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus:-ms-input-placeholder {
+    opacity: 0.5;
+}
+
+::-moz-placeholder {
+    //- Firefox 19+
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus::-moz-placeholder {
+    opacity: 0.5;
+}
+
+:-moz-placeholder {
+    //- Firefox 4 - 18
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus:-moz-placeholder {
+    opacity: 0.5;
+}
+
+.fancybox-container {
+    font-family: "Lato", "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif; // .fancybox-close-small {
+    //     @include table-up-width() {
+    //         top: -20px;
+    //         right: -20px;
+    //     }
+    //     &:after {
+    //         background-color: $grey;
+    //         color: $white;
+    //     }
+    // }
+}
+
+.cargo {
+    .fancybox-close-small {
+        @include table-up-width() {
+            top: -20px;
+            right: -20px;
+        }
+        &:after {
+            background-color: $grey;
+            color: $white;
+        }
+    }
+}
+
+.modal_center {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    display: table;
+    @include spc-width {
+        width: 100%;
+        max-width: 90%;
+    }
+    @include table-up-width {
+        bottom: 0;
+    }
+    @include phone-width {
+        max-height: 500px;
+        left: 50%;
+        top: 50%;
+        display: block;
+        transform: translate(-50%, -50%) !important;
+    }
+    .modal-content {
+        display: table-cell;
+        @include phone-width {
+            display: block;
+        }
+        .modal-header {
+            padding: 10px 15px;
+            border-radius: 6px 6px 0 0;
+        }
+        .modal-title {
+            text-align: center;
+        }
+        .modal-body {
+            @include phone-width {
+                max-height: 480px;
+                overflow-x: hidden;
+            }
+        }
+    }
+    .close {
+        position: absolute;
+        padding: 4px;
+        z-index: 2;
+        opacity: 1;
+        color: $white;
+        outline: 0;
+        right: -14px;
+        top: -14px;
+        border-radius: 50px;
+        background-color: $black;
+        outline: 0;
+    }
+}
+
+//修復OWL 2.3.0 在安卓的問題
+.owl-carousel .owl-stage,
+.owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: auto;
+    touch-action: auto;
+}
+
+//fancybox animate
+.animated-modal {
+    max-width: 550px;
+    border-radius: 4px;
+    overflow: hidden;
+    transform: translateY(-50px);
+    transition: all .7s;
+    h3,
+    p {
+        transform: translateY(-50px);
+        opacity: 0;
+        transition-property: transform, opacity;
+        transition-duration: .4s;
+    }
+}
+
+/* Final state */
+
+.fancybox-slide--current .animated-modal,
+.fancybox-slide--current .animated-modal h3,
+.fancybox-slide--current .animated-modal p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Reveal content with different delays */
+
+.fancybox-slide--current .animated-modal h3 {
+    transition-delay: .1s;
+}
+
+.fancybox-slide--current .animated-modal p {
+    transition-delay: .3s;
+}
+
+//------------------------------------------------------hr
+hr {
+    border-color: lighten($grey, 25%);
+}
+
+.divider-hr {
+    // position: relative;
+    overflow: hidden;
+    margin: auto 0;
+    color: lighten($grey, 25%);
+    width: 100%;
+    border-top: 1px solid lighten($grey, 25%); // &:before{
+    //      content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   top: 8px;
+    //   left: 30px;
+    //   height: 0;
+    //   border-top: 1px solid lighten($grey, 25%);
+    // }
+}
+
+//------------------------------------------------------條款
+.stage {
+    padding-inline-start: 26px;
+    &.chinese {
+        list-style: cjk-ideographic;
+    }
+    >li {
+        color: lighten($black, 10%);
+        line-height: 170%;
+        letter-spacing: 1px;
+        @include rem(font-size, 1.6rem);
+        padding: 15px 0;
+        p {
+            color: lighten($black, 10%);
+            font-weight: 300;
+        }
+        >ol {
+            color: lighten($black, 10%);
+            font-weight: 300;
+            padding-inline-start: 20px;
+        }
+    }
+
+    .stage_tit {
+        color: $black;
+        @include rem(font-size, 2.0rem);
+        font-weight: 400;
+    }
+
+    .sec_stage {
+        list-style-type: lower-latin;
+        padding: 10px 0 10px 20px;
+        li {
+            color: lighten($black, 10%);
+            font-weight: 300;
+        }
+    }
+
+    .textedit {
+        letter-spacing: 1px;
+    }
+}
+
+
+//------------------------------------------------------textedit
+.textedit {
+    line-height: 170%;
+    color: lighten($black, 10%);
+    h3 {
+        color: $black;
+        @include rem(font-size, 2.0rem);
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    p {
+        color: lighten($black, 18%);
+        margin: 0 0 10px;
+        letter-spacing: 1px;
+        line-height: 170%;
+        font-weight: 300;
+        word-break: break-all;
+        text-shadow: 0 0 0.0001em rgba($black, .2);
+    }
+    img {
+        height: auto;
+        max-width: 100%;
+        margin: 10px auto;
+        width: auto;
+    }
+    b {
+        font-weight: 400;
+    }
+}
+
+.small_font {
+    font-size: 13px !important;
+    line-height: 140%;
+    letter-spacing: 1px;
+}
+
+//------------------------------------------------------margin
+.mt5 {
+    margin-top: 5px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.mt40 {
+    margin-top: 40px !important;
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mt60 {
+    margin-top: 60px !important;
+}
+
+.mb5 {
+    margin-bottom: 5px !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.mb40 {
+    margin-bottom: 40px !important;
+}
+
+.mb60 {
+    margin-bottom: 60px !important;
+}
+
+.ml5 {
+    margin-left: 5px !important;
+}
+
+.ml10 {
+    margin-left: 10px !important;
+}
+
+//------------------------------------------------------page
+.pagebox {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    li {
+        background: $black;
+        color: $white;
+        line-height: 36px;
+        margin-right: 10px;
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    a {
+        color: $white;
+        display: block;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 400;
+        position: relative;
+        &:hover {
+            background: $darkbeige;
+        }
+    }
+    .on {
+        background: $darkbeige;
+        position: relative; // &:after {
+        //     background: $black;
+        //     content: '';
+        //     display: inline-block;
+        //     width: 50%;
+        //     height: 2px;
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 0;
+        //     transform: translate(50%, 0);
+        // }
+    }
+    .arrow {
+        transition: all 0.3s ease-in-out;
+        @include sphone-width {
+            flex: 0 0 36px;
+        }
+        &:hover {
+            background: $red;
+        }
+    }
+}
+
+//------------------------------------------------------gotop
+#gotop {
+    display: none;
+    width: 46px;
+    height: 46px;
+    background: $black;
+    border-radius: 1px;
+    position: fixed;
+    right: 20px;
+    bottom: 4%;
+    z-index: 100;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all .5s ease;
+    @include phone-width {
+    		display: none !important;
+    }
+    &:after {
+        content: '\f077';
+        @extend %icons-f;
+        display: block;
+        @include rem(font-size, 1.5rem);
+        font-weight: normal;
+        text-align: center;
+        color: $white;
+        line-height: 46px;
+    }
+    &:hover {
+        background: $buttonbeige;
+    }
+    &.foo_top {
+        bottom: 310px;
+        @include table-width {
+            bottom: 30%;
+        }
+        @include phone-width {
+            bottom: 450px;
+        }
+        @include sphone-width {
+            bottom: 80%;
+        }
+    }
+}

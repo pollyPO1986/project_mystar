@@ -1,0 +1,113 @@
+extend layout/_layout.jade
+
+mixin skin(gp,id,name)
+	li
+		span.radio-inline
+			input(type='radio', name=gp, id=id, value='')
+			label(for=id)=name
+
+mixin skins(id,name)
+	li
+		span.checkbox-inline
+			input(type='checkbox', id=id, value='')
+			label(for=id)=name
+
+mixin product(bg,name,sub)
+	li.col-xs-6.col-sm-3.pic-box
+		.hoverimg.square(style=bg)
+			a.overlay(href="products_detail.html") 
+				.overlay_content MORE
+		.caption
+			a(href="products.html")
+				h3=name
+			p.sub=sub
+		.shop_funbox
+			del 原價：2,000
+			p.price(data-mark="NT$") 1,600
+			ul.list-inline.shop_btn
+				li
+					button.btn.btn-link(type="button", data-toggle="tooltip", data-placement="top", title="加到最愛")
+						i.fa.fa-heart-o
+				li
+					button.btn.btn-link(type="button", data-toggle="tooltip", data-placement="top", title="加到購物車")
+						i.fi.flaticon-cart
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active 肌膚檢測
+block content
+	.col-xs-12
+		.title.news
+			h2 肌膚檢測
+		ul.care_list
+			li
+				h4.text-center Step1．皮膚年齡
+				ul.flex-list
+					+skin('s1','s11','輕齡 (12~20歲)')
+					+skin('s1','s12','輕熟齡 (21~35歲)')
+					+skin('s1','s13','中熟齡 (36~45歲)')
+					+skin('s1','s14','熟齡 (46~60歲)')
+			li
+				h4.text-center Step2．皮膚類型
+				ul.flex-list
+					+skin('s2','s21','乾性')
+					+skin('s2','s22','中性')
+					+skin('s2','s23','油性')
+					+skin('s2','s24','混合性 (T字油，兩頰乾)')
+			li
+				h4.text-center Step3．特殊膚況
+				ul.flex-list
+					+skins('s31','粉刺痘痘')
+					+skins('s32','敏感肌膚')
+					+skins('s33','暗沉斑點')
+					+skins('s34','皺紋鬆弛')
+					+skins('s35','第五問題')
+					+skins('s36','第六問題')
+					+skins('s37','第七問題')
+					+skins('s38','第八問題')
+					+skins('s39','第九問題')
+					+skins('s40','第十問題')
+			li
+				h4.text-center Step4．皮膚問題
+				ul.flex-list
+					+skins('s41','粉刺痘痘')
+					+skins('s42','敏感肌膚')
+					+skins('s43','暗沉斑點')
+					+skins('s44','皺紋鬆弛')
+					+skins('s45','第五問題')
+					+skins('s46','第六問題')
+					+skins('s47','第七問題')
+					+skins('s48','第八問題')
+					+skins('s49','第九問題')
+			li.text-center
+				button.btn.btn_black(type='submit') 肌膚檢測
+		.titlebar_line
+			p.titles_line_font 檢測結果
+		p.text-center.beige &quot; 智慧，就是認識妳自己 &quot;
+			br
+			|要選擇適合的保養品，就要先了解自己的肌膚。
+		.row
+			.col-xs-12.col-md-10.col-md-offset-1
+				.textedit.mt30.mb60
+					h3 一、皮膚年齡
+					p 輕齡(12~20歲) ： 年輕的肌膚總是令人羨慕，然而青春期的荷爾蒙或經期的影響，清潔、控油與淨痘是最重要的課題。
+					h3 二、皮膚類型
+					p 中性：您是上天眷顧的幸運兒！很少有人能保留青春期之前如兒童般的理想膚質，雖然無需特別加強哪方面的保養，但若能尋找到全方位的平衡保養，將使您幸運的美麗不斷地延續下去！
+
+		.col_box.mt30
+			.titlebar
+				h2 建議商品
+			ul.row.pro_list
+				+product('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_02.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_03.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_04.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_04.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+block lightbox
+	//- lightbox
+		

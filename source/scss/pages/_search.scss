@@ -1,0 +1,62 @@
+//search
+.table_nav {
+    position: relative;
+}
+
+.searchbox {
+    @include pc-width {
+		    position: absolute;
+		    right: 0;
+		    top: 50px;
+        width: 220px;
+    }
+    @include spc-width {
+    		position: absolute;
+		    right: 0;
+		    top: 50px;
+        width: 180px;
+    }
+    @include table-width {
+    		position: static;
+        width: 180px;
+    }
+    input,
+    button.btn {
+        outline: 0;
+        box-shadow: none;
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+    .search {
+        position: relative;
+        .form-control {
+            border: 2px solid lighten($grey, 25%);
+            border-radius: 20px;
+            padding: 6px 40px 6px 12px;
+            @include table-width {
+            		border: none;
+            }
+        }
+        .btn_icons {
+            background: transparent;
+            color: lighten($grey, 25%);
+            transition: all 0.3s ease-in-out;
+            transform:scaleX(-1);
+            position: absolute;
+            right:0;
+            top:0;
+            z-index: 1;
+            &:hover,
+            &:focus,
+            &:active {
+                color: lighten($grey, 30%);
+            }
+        }
+        input::-webkit-input-placeholder {
+        		line-height: normal;
+        		vertical-align: middle;
+    		}
+    }
+}

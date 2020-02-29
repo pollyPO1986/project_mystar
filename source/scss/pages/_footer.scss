@@ -1,0 +1,245 @@
+footer {
+    background: $black;
+    position: relative;
+}
+
+.bible {
+    text-align: center;
+    letter-spacing: 1px;
+    border-top: 1px solid lighten($grey, 25%);
+    @include pc-width {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 100px;
+    }
+    @include spc-width {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 50px;
+    }
+}
+
+.footer_navbar {
+    border-bottom: 1px solid darken($grey, 20%);
+    ul {
+        text-align: center;
+        @include table-up-width {
+            padding: 20px 0;
+        }
+        @include phone-width {
+            padding: 20px 0;
+            @include flexbox(flex, wrap, center, center);
+        }
+    }
+    li {
+        @include table-up-width {
+            display: inline-block;
+        }
+        +li {
+            &:before {
+                content: '．';
+                color: darken($white, 10%);
+                padding-right: 2px;
+            }
+        }
+        a {
+            color: darken($white, 10%);
+            font-weight: 300;
+            letter-spacing: 1px;
+            &:hover {
+                color: $darkbeige;
+            }
+        }
+    }
+}
+
+.footer_logo {
+    height: auto;
+    margin: 0 auto;
+    @include pc-width {
+        width: 210px;
+    }
+    @include phone-width {
+        width: 150px;
+        margin: 0 auto;
+    }
+}
+
+.footer_media {
+    text-align: center;
+    @include pc-width {
+        width: 450px;
+    }
+    @include table-up-width {
+        margin: 42px auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    @include table-width {
+        @include flexbox(flex, nowrap, space-around, center);
+    }
+    li {
+        display: inline-block;
+        &:first-child {
+            a {
+                &:hover {
+                    color: $facebook;
+                }
+            }
+        }
+        &:nth-child(2) {
+            a {
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+        &:last-child {
+            a {
+                &:hover {
+                    color: $never-line;
+                }
+            }
+        }
+    }
+    a {
+        color: darken($white, 10%);
+        font-weight: 300;
+        display: block;
+    }
+    i {
+        display: block;
+        &:before {
+            @include table-up-width {
+                @include rem(font-size, 8.4rem);
+            }
+            @include table-width {
+                @include rem(font-size, 4.8rem);
+            }
+        }
+    }
+}
+
+.footer_emailbox {
+    @include table-up-width {
+        margin: 42px auto;
+    }
+    @include table-width {
+        margin: 26px auto;
+    }
+    p {
+        color: darken($white, 10%);
+    }
+    .form-inline {
+        .form-control {
+            @include table-up-width {
+                width: 184px;
+                line-height: 36px;
+            }
+            @include phone-width {
+                width: 212px;
+                line-height: 36px;
+            }
+        }
+        .form-group {
+            @include phone-width {
+                display: inline-block;
+                margin-bottom: 0;
+                vertical-align: middle;
+            }
+        }
+        button {
+            padding: 6px 20px;
+        }
+    }
+}
+
+.copyright {
+    color: $grey;
+    font-weight: 300;
+    padding: 15px 0;
+    border-top: 1px solid darken($grey, 20%);
+    letter-spacing: 2px;
+    @include rem(font-size, 1.5rem);
+    .web_author {
+        color: $grey;
+        font-weight: 300;
+        letter-spacing: 1px;
+        &:hover {
+            color: $darkbeige;
+        }
+    }
+}
+
+#epaper {
+    // @include pc-width {
+    // 		height: 36px;
+    // 		width: 180px;
+    // }
+    @include spc-width {
+        position: absolute;
+        top: 1px;
+        left: 15px;
+    }
+    .paperbox {
+        position: relative;
+        .paper_button,
+        .paper_ad {
+            position: absolute;
+        }
+        .paper_button {
+            z-index: 51;
+            outline: none;
+            left: 1px;
+            bottom: 1px;
+        }
+        .paper_ad {
+            background: $white;
+            border: 1px solid lighten($grey, 25%);
+            display: none;
+            left: 0;
+            bottom: 1px;
+            padding: 10px 20px 20px;
+            width: 345px;
+            z-index: 52;
+            .paper_content {
+                h3 {
+                    @include rem(font-size, 2.4rem);
+                    line-height: 170%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.fixed {
+    @include pc-width {
+        position: fixed;
+        bottom: 0;
+        left: 3%;
+        z-index: 50;
+    }
+}
+
+.abset {
+    @include pc-width {
+        position: absolute;
+        top: 1px;
+        left: 15px;
+    }
+}
+
+.lightbox_epaper {
+    h3 {
+    		color:$black;
+        @include rem(font-size, 2.4rem);
+        line-height: 170%;
+        text-align: center;
+    }
+    p {
+    		text-align: center;
+    		margin-top: 10px;
+    }
+}

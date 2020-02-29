@@ -1,0 +1,78 @@
+extend layout/_layout_side_r.jade
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li
+			a(href='products.html') 清潔系列
+		li.active 商品名稱
+
+block sidenav
+	.row
+		.col-md-9
+			.pro_area
+				.pro_photos(style='background-image:url(images/products/products_detail.png);')
+		.col-md-3
+			.pro_sellinfo
+				h3.pro_name(data-mark='清潔系列') 超緊顏白金淡斑精粹組
+				span.pro_sub 次標說明
+				hr
+				del 原價：2,000
+				p.pro_price(data-mark='NT$') 1,600
+				hr
+				.wan-spinner.pro_num.mb30
+					a.minus(href='javascript:void(0)') -
+					input(type='text', value='1')
+					a.plus(href='javascript:void(0)') +
+				button.btn.btn-block.btn_black(type='button') 
+					i.fa.fa-heart-o
+					| 加到最愛
+				button.btn.btn-block.btn_black(type='button') 
+					i.fi.flaticon-cart
+					| 加到購物車
+				button.btn.btn-block.btn_black.active(type='button') 
+					i.fa.fa-check
+					| 已加到購物車
+
+block content
+	.pro_area
+		.pro_tabs
+			ul.nav.nav-tabs.nav-justified(role='tablist')
+				li.active(role='presentation')
+					a(href='#pro_info', aria-controls='pro_info', role='tab', data-toggle='tab') 商品介紹
+				li(role='presentation')
+					a(href='#pro_sort', aria-controls='pro_sort', role='tab', data-toggle='tab') 使用順序
+				li(role='presentation')
+					a(href='#pro_inspection', aria-controls='pro_inspection', role='tab', data-toggle='tab') 檢驗報告
+
+			.tab-content
+				#pro_info.tab-pane.active(role='tabpanel')
+					.textedit
+						p 克傳畫子化質。色那論臺能天也兒運改客？有所世銀、她大檢計策，力樂減上為那四而？王自好團：幾完面畫生趣急想據麼起帶合，精約眼成金記一熱同月爸地這保禮力作公主少文選作、線變可媽我亞下那行品了主心路。音動之全覺候開情，都球有單。如前上通本東是參去何自作寶利美指個大間只下校業母務他又的王有動活。他音我公天成參故石氣資的出教的，向我很醫越外他和城究坐是地！過能大明因……洋角現以消不媽，近動在方推業縣中，不在且深種中外知！兩樓得安，點歷易作，你請生力中；吃初常體發標一究喜一過子約。聯可像天一家手處。
+					h4.pro_titlebar 商品規格
+					.textedit
+						p 克傳畫子化質。色那論臺能天也兒運改客？有所世銀、她大檢計策，力樂減上為那四而？王自好團：幾完面畫生趣急想據麼起帶合，精約眼成金記一熱同月爸地這保禮力作公主少文選作、線變可媽我亞下那行品了主心路。音動之全覺候開情，都球有單。如前上通本東是參去何自作寶利美指個大間只下校業母務他又的王有動活。他音我公天成參故石氣資的出教的，向我很醫越外他和城究坐是地！過能大明因……洋角現以消不媽，近動在方推業縣中，不在且深種中外知！兩樓得安，點歷易作，你請生力中；吃初常體發標一究喜一過子約。聯可像天一家手處。
+					h4.pro_titlebar 注意事項
+					.textedit
+						p 注意事項：
+						ul.dot_liststyle
+							li 使用前請先做肌膚測試，確定有無過敏反應再使用。
+							li 肌膚上有傷口紅腫濕疹等異常現象時，請勿使用。
+							li 使用中或使用後肌膚若有異常現象時，請停止使用並洽詢皮膚科醫生。
+							li 請置於嬰幼兒拿不到之處，避免幼童撿取食用。
+							li 因電腦螢幕設定及個人觀感之差異，本賣場之商品圖片僅供參考，以收到實際商品為準，請見諒。
+				#pro_sort.tab-pane(role='tabpanel')
+					.textedit
+						p 克傳畫子化質。色那論臺能天也兒運改客？有所世銀、她大檢計策，力樂減上為那四而？王自好團：幾完面畫生趣急想據麼起帶合，精約眼成金記一熱同月爸地這保禮力作公主少文選作、線變可媽我亞下那行品了主心路。音動之全覺候開情，都球有單。如前上通本東是參去何自作寶利美指個大間只下校業母務他又的王有動活。他音我公天成參故石氣資的出教的，向我很醫越外他和城究坐是地！過能大明因
+					h4.pro_titlebar 商品規格
+					p 2
+				#pro_inspection.tab-pane(role='tabpanel')
+					.textedit
+						p 克傳畫子化質。色那論臺能天也兒運改客？有所世銀、她大檢計策，力樂減上為那四而？王自好團：幾完面畫生趣急想據麼起帶合，精約眼成金記一熱同月爸地這保禮力作公主少文選作、線變可媽我亞下那行品了主心路。音動之全覺候開情，都球有單。如前上通本東是參去何自作寶利美指個大間只下校業母務他又的王有動活。他音我公天成參故石氣資的出教的，向我很醫越外他和城究坐是地！過能大明因
+					h4.pro_titlebar 商品規格
+					p 3
+
+block lightbox
+	//- lightbox
+		

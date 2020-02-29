@@ -1,0 +1,176 @@
+//checkout
+.list_tablestyle {
+    border: 1px solid lighten($grey, 25%);
+    +.list_tablestyle {
+        margin-top: 30px;
+    }
+    >li {
+        letter-spacing: 1px;
+        position: relative;
+        min-height: 43px;
+        @include table-up-width {
+            @include flexbox(flex, nowrap, flex-start, center);
+            padding: 10px 10px 10px 160px;
+        }
+        @include phone-width {
+            @include flexbox(flex, wrap, flex-start, center);
+            padding: 10px 10px 10px 120px;
+        }
+        +li {
+            border-top: 1px solid lighten($grey, 25%);
+        }
+        &:before {
+            content: attr(data-tit);
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            @include table-up-width {
+                margin-left: 40px;
+            }
+            @include phone-width {
+                margin-left: 20px;
+            }
+        }
+        &:nth-child(odd) {
+            background-color: lighten($grey, 38.5%);
+        }
+        &:first-child {
+            padding-left: 20px;
+            background-color: lighten($grey, 35%);
+            &:before {
+                content: '';
+            }
+        }
+        &:last-child {
+            .bootstrap-select {
+                @include table-up-width {
+                    margin-right: 10px;
+                }
+                +.bootstrap-select {
+                    @include phone-width {
+                        margin-top: 10px;
+                    }
+                }
+                +input[type='text'] {
+                    @include phone-width {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .checkbox-inline {
+            margin-left: 10px;
+            label {
+                margin-bottom: 0;
+                font-weight: 400;
+            }
+            input[type="checkbox"] {
+                &+i {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .form-control {
+            @include pc-width {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+        input {
+            @include table-up-width {
+                width: 300px;
+            }
+        }
+        .bootstrap-select.form-control:not([class*="col-"]) {
+            @include table-up-width {
+                width: 130px;
+            }
+        }
+        label {
+            @include phone-width {
+                flex-basis: 100%;
+            }
+            &:last-child {
+                // @include table-width {
+                //     flex-basis: 320px;
+                // }
+                >input[type='text'] {
+                    @include table-width {
+                        display: inline-block;
+                        width: 188px;
+                        margin-right: 0;
+                    }
+                    @include phone-width {
+                        display: block;
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .radio-inline+.radio-inline {
+            @include phone-width {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+        .sendinfo {
+            @include table-up-width {
+                @include flexbox(flex, nowrap, flex-start, center);
+            }
+            @include table-up-width {
+                @include flexbox(flex, wrap, flex-start, center);
+            }
+            label {
+                font-weight: 400;
+            }
+            span {
+                @include table-up-width {
+                    display: inline-block;
+                }
+                @include table-width {
+                    display: block;
+                    flex: 100%;
+                }
+                +span {
+                    @include table-width {
+                        margin-top: 15px;
+                    }
+                }
+                &:first-child {
+                    input {
+                        @include table-up-width {
+                            width: 150px;
+                        }
+                        @include table-width {
+                            display: inline-block;
+                            width: auto;
+                        }
+                        @include phone-width {
+                            width: 100%;
+                        }
+                    }
+                }
+                &:last-child {
+                    input {
+                        @include table-width {
+                            display: inline-block;
+                            width: 190px;
+                        }
+                        @include phone-width {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkout_f {
+    ul.list_tablestyle:first-child {
+        li:nth-child(2) {
+            padding: 10px;
+        }
+    }
+}

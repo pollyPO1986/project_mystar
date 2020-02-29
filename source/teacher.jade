@@ -1,0 +1,54 @@
+extend layout/_layout.jade
+
+mixin news(bg,date,title)
+	li
+		.newsbox.pic-box
+			a.moveimg.pic_43(href='news_single.html')
+				.imgbox(style=bg)
+			.caption
+				p.beige=date
+				h3=title
+				.infosay
+					| 家聲老，推變的是發教期，自大快形聲影確？直不夫容理倒曾，進結更積長初重日間。一無了都來竟還路母我縣方業公教是為生日電體人，一個講來酒。為較世也因者。代頭成院麼！細各知近分方府是業無任她大者。
+				p.text-right
+					a.btn.btn-xs.btn-default(role='button',href='news_single.html') READ
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active 老師專欄
+block content
+	.col-xs-12.col-md-10.col-md-offset-1
+		.title
+			h2 老師專欄
+		ul.news_list
+			+news('background-image:url(images/products/products_360x200_01.jpg);','2018-02-01','消息標題')
+			+news('background-image:url(images/products/products_360x200_01.jpg);','2018-02-01','消息標題')
+			+news('background-image:url(images/products/products_360x200_01.jpg);','2018-02-01','消息標題')
+			+news('background-image:url(images/products/products_360x200_01.jpg);','2018-02-01','消息標題')
+			+news('background-image:url(images/products/products_360x200_01.jpg);','2018-02-01','消息標題')
+			+news('background-image:url(images/products/products_360x200_01.jpg);','2018-02-01','消息標題')
+
+		ul.pagebox
+			li(class="arrow")
+				i.fa.fa-angle-double-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li(class="arrow")
+				i.fa.fa-angle-double-right(aria-hidden='true')
+			
+block lightbox
+	//- lightbox
+		

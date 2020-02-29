@@ -1,0 +1,124 @@
+extend layout/_layout.jade
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active 會員登入／註冊
+
+block content
+	.col-xs-12.col-md-10.col-md-offset-1
+		ul.list-inline.login.hidden-xs
+			li
+				.titlebar.mb30
+					h3 會員登入
+				form.login_form(role='form', method='POST')
+					.form-group
+						label.sr-only(for='') 帳號
+						input.form-control(type='email', id='', name='', placeholder='請輸入您的帳號')
+					.form-group
+						label.sr-only(for='') 密碼
+						input.form-control(type='password', id='', name='', placeholder='請輸入您的密碼')
+					.form-group
+						a.btn.btn-block.btn_black(href='member_info.html') 登入
+						p.forget
+							a(href="fun_forget.html") 忘記密碼?
+					.form-group
+						p 或是使用社群帳號登入
+					.form-group
+						button.btn.btn-block.btn_facebook(type='submit') 
+							i.fi.flaticon-facebook
+							| Facebook登入
+						button.btn.btn-block.btn_google(type='submit') 
+							i.fa.fa-google
+							| Google登入
+			li
+				.titlebar.mb30
+					h3 會員註冊
+				form.login_form(role='form', method='POST')
+					.form-group
+						label.sr-only(for='') 帳號
+						input.form-control(type='email', id='', name='', placeholder='請輸入您的帳號')
+					.form-group
+						label.sr-only(for='') 密碼
+						input.form-control(type='password', id='', name='', placeholder='請輸入您的密碼')
+					.form-group
+						label.sr-only(for='') 再次輸入密碼
+						input.form-control(type='password', id='', name='', placeholder='請再次輸入您的密碼')
+					.form-group
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+								small
+									|  我已詳細閱讀並同意 <
+									a(data-fancybox='', data-src='#service_paper', href='javascript:;') 服務條款
+									| >
+					.form-group
+						button.btn.btn-block.btn_black(type='submit') 註冊
+						a.btn.btn-block.btn-default(role='button', href='fun_faq.html')
+							i.fi.flaticon-books
+							| 新手上路
+									
+						
+		.mobi_login.hidden-lg.hidden-md.hidden-sm
+			.login_tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#member_login', aria-controls='member_login', role='tab', data-toggle='tab') 會員登入
+					li(role='presentation')
+						a(href='#member_register', aria-controls='member_register', role='tab', data-toggle='tab') 會員註冊
+			.tab-content
+					#member_login.tab-pane.active(role='tabpanel')
+						form.login_form(role='form', method='POST')
+							.form-group
+								label.sr-only(for='') 帳號
+								input.form-control(type='email', id='', name='', placeholder='請輸入您的帳號')
+							.form-group
+								label.sr-only(for='') 密碼
+								input.form-control(type='password', id='', name='', placeholder='請輸入您的密碼')
+							.form-group
+								a.btn.btn-block.btn_black(href='member_info.html') 登入
+								p.forget
+									a(href="fun_forget.html") 忘記密碼?
+							.form-group
+								p 或是使用社群帳號登入
+							.form-group
+								button.btn.btn-block.btn_facebook(type='submit') 
+									i.fi.flaticon-facebook
+									| Facebook登入
+								button.btn.btn-block.btn_google(type='submit') 
+									i.fa.fa-google
+									| Google登入
+									
+					#member_register.tab-pane(role='tabpanel')
+						form.login_form(role='form', method='POST')
+							.form-group
+								label.sr-only(for='') 帳號
+								input.form-control(type='email', id='', name='', placeholder='請輸入您的帳號')
+							.form-group
+								label.sr-only(for='') 密碼
+								input.form-control(type='password', id='', name='', placeholder='請輸入您的密碼')
+							.form-group
+								label.sr-only(for='') 再次輸入密碼
+								input.form-control(type='password', id='', name='', placeholder='請再次輸入您的密碼')
+							.form-group
+								.checkbox
+									label
+										input(type='checkbox')
+										i.fa.fa-check(aria-hidden='true')
+										small
+											|  我已詳細閱讀並同意 <
+											a(href="#") 服務條款
+											| >
+							.form-group
+								button.btn.btn-block.btn_black(type='submit') 註冊
+								a.btn.btn-block.btn-default(role='button', href='javascript:;')
+									i.fi.flaticon-books
+									| 新手上路
+block lightbox
+	#service_paper.cargo(style='display: none;max-width:1200px;')
+		h4 服務條款

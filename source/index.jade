@@ -1,0 +1,90 @@
+extend layout/_layout.jade
+
+mixin product(bg,name,sub)
+	.pic-box
+		.hoverimg.square(style=bg)
+			a.overlay(href="products.html") 
+				.overlay_content MORE
+		.caption
+			a(href="products.html")
+				h3=name
+			p.sub=sub
+		.shop_funbox
+			del 原價：2,000
+			p.price(data-mark="NT$") 1,600
+			ul.list-inline.shop_btn
+				li
+					button.btn.btn-link(type="button", data-toggle="tooltip", data-placement="top", title="加到最愛")
+						i.fa.fa-heart-o
+				// 我的最愛選取後的樣式
+				// li
+				// 	button.btn.btn-link.active(type="button", data-toggle="tooltip", data-placement="top", title="加到最愛")
+				// 		i.fa.fa-heart
+				li
+					button.btn.btn-link(type="button", data-toggle="tooltip", data-placement="top", title="加到購物車")
+						i.fi.flaticon-cart
+				// 加入購物車選取後的樣式
+				// li
+				// 	button.btn.btn-link.active(type="button", data-toggle="tooltip", data-placement="top", title="加到購物車")
+				// 		i.fi.flaticon-cart
+
+block top_content
+	.slider
+		#slider_full.carousel.slide(data-ride='carousel')
+			ol.carousel-indicators
+				li.active(data-target='#slider_full', data-slide-to='0')
+				li(data-target='#slider_full', data-slide-to='1')
+				li(data-target='#slider_full', data-slide-to='2')
+			.carousel-inner(role='listbox')
+				.item.active(style="background-image:url('images/slider/slider_1170x460_01.jpg');")
+				.item(style="background-image:url('images/slider/slider_1170x460_02.jpg');")
+				.item(style="background-image:url('images/slider/slider_1170x460_03.png');")
+				//- 圖片尺寸為1170*460
+			a.left.carousel-control(href='#slider_full', role='button', data-slide='prev')
+				span.fa.fa-angle-left
+				span.sr-only Prev
+			a.right.carousel-control(href='#slider_full', role='button', data-slide='next')
+				span.fa.fa-angle-right
+				span.sr-only Next
+block content
+	.col-xs-12
+		.col_box
+			.titlebar
+				h2 探索Mystar
+			ul.row.index_box
+				li.col-xs-12.col-sm-4
+					.pic-box
+						a.moveimg.pic_169(href='teacher.html')
+							.imgbox(style='background-image:url(images/index/index_360x200_01.png);')
+						.caption
+							h3 老師專欄
+							a.read(href="teacher.html") READ
+				li.col-xs-12.col-sm-4
+					.pic-box
+						a.moveimg.pic_169(href='nav_uphold.html')
+							.imgbox(style='background-image:url(images/index/index_360x200_02.png);')
+						.caption
+							h3 Mystar的堅持
+							a.read(href="nav_uphold.html") READ
+				li.col-xs-12.col-sm-4
+					.pic-box
+						a.moveimg.pic_169(href='user-feedback.html')
+							.imgbox(style='background-image:url(images/index/index_360x200_03.png);')
+						.caption
+							h3 使用見證
+							a.read(href="user-feedback.html") READ
+		.col_box
+			.titlebar
+				h2 組合優惠
+			// 首頁展示商品固定四個
+			.owl-carousel.owl-theme.pro_list.index
+				+product('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_02.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_03.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				+product('background-image:url(images/products/products_260x260_04.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+
+block lightbox
+	#skincare
+		a(href="skincare.html")
+			i.fi.flaticon-search
+			| 如何選購

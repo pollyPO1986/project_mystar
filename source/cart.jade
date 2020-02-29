@@ -1,0 +1,162 @@
+extend layout/_layout.jade
+
+mixin cart(pic,name,sub,price)
+	tr
+		td(class="visible-xs")
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td
+			.keep_img
+				a(href="products_detail.html",style=pic)
+		td.pic-box
+			.caption
+				a(href="products.html")
+					h3=name
+				p.sub=sub
+		td
+			p.any_price(data-mark='NT$')=price
+		td.pro_sellinfo
+			.wan-spinner.pro_num
+				a.minus(href='javascript:void(0)') -
+				input(type='text', value='1')
+				a.plus(href='javascript:void(0)') +
+		td
+			p.any_price(data-mark='NT$')=price
+		td
+			a(href="javascript:;") &#9747;
+
+block top_content
+block content
+	.col-xs-12
+		.title
+			h2 購物車
+		table.table.tablestyle.cart_tb(data-toggle-column="first")
+			thead
+				tr
+					th(class="visible-xs")
+					th
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					th 商品照
+					th 商品名稱
+					th(data-breakpoints='xs sm') 價格
+					th(data-breakpoints='xs') 數量
+					th(data-breakpoints='xs') 小計
+					th(data-breakpoints='xs') 刪除
+			tbody
+				+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+				+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+			tfoot
+				tr
+					td(colspan="7")
+						ul.cart_checkout
+							li 小計
+							li
+								p.pinkred.any_price(data-mark="NT$") 6,000
+				tr
+					td(colspan="7")
+						ul.cart_checkout
+							li
+								i.fi.flaticon-check.checkgreen
+								|  符合活動折扣
+							li
+								p.pinkred.any_price(data-mark="-NT$") 200
+				tr
+					td(colspan="7")
+						ul.cart_checkout
+							li
+								.checkbox-inline
+									label
+										input(type='checkbox' checked)
+										i.fi.flaticon-check
+								span 美麗金折抵
+								small.grey (您的美麗金最高可折抵
+									sapn.any_price(data-mark="-NT$") 50
+									| )
+							li
+								p.pinkred.any_price(data-mark="-NT$") 50
+				tr
+					td(colspan="7")
+						ul.cart_checkout
+							li
+								button.btn.btn_grey.cargo_btn(type='button', data-fancybox='inline', data-src='#cargo', href='javascript:;') + 寄送方式
+								small.grey (不管尺寸均一價，滿三件即免運)
+								// 這是選完之後的樣子 (店到店)
+								p.beige 超商 (全家)
+								small.grey 全家豐原真樂店　台中市豐原區豐勢路二段787號
+
+								// 這是選完之後的樣子 (宅配)
+								p.beige 宅配
+
+							li
+								p.pinkred.any_price(data-mark="+NT$") 0
+				tr
+					td(colspan="7")
+						ul.cart_checkout
+							li 合計
+							li
+								p.red.any_price(data-mark="NT$") 5,750
+		.cart_checkbox
+			.discount_line
+				.input-group
+					input.form-control(type='text', placeholder='')
+					span.input-group-btn
+						button.btn.btn_black(type='button') 確定
+			p
+				a.btn.btn_black(role='button', href='products.html') 繼續購物
+				a.btn.btn_black(role='button', href='paymant.html') 下一步
+
+block lightbox
+	//- lightbox
+	#cargo.cargo(style='display: none;max-width:800px;')
+		h4 請選擇您要的寄送方式
+		p.grey.mt5 不管尺寸均一價，滿額即可免運
+
+		ul.cargo_list
+			li 超商
+			li
+				label.radio-inline(for='7-11')
+					input(type='radio',id='7-11', name='paymant', value='')
+					i.fa.fa-circle(aria-hidden='true')
+					|  7-11
+				p.pinkred.any_price(data-mark="NT$") 65
+				ul
+					li
+						button.btn.btn_linestyle(type='button') + 新增門市
+			li
+				label.radio-inline(for='family')
+					input(type='radio',id='family', name='paymant', value='', checked)
+					i.fa.fa-circle(aria-hidden='true')
+					|  全家
+				p.pinkred.any_price(data-mark="NT$") 65
+				ul
+					li
+						label.radio-inline(for='family_01')
+							input(type='radio',id='family_01', name='', value='', checked)
+							i.fa.fa-circle(aria-hidden='true')
+							|  全家豐原真樂店　台中市豐原區豐勢路二段787號
+						a.underline(href="javascript:;") 刪除
+					li
+						button.btn.btn_linestyle(type='button') + 新增門市
+
+		ul.cargo_list
+			li 其他物流
+			li
+				label.radio-inline(for='home')
+					input(type='radio',id='home', name='paymant', value='')
+					i.fa.fa-circle(aria-hidden='true')
+					|  宅配
+				p.pinkred.any_price(data-mark="NT$") 120
+			li
+				label.radio-inline(for='outsland')
+					input(type='radio',id='outsland', name='paymant', value='')
+					i.fa.fa-circle(aria-hidden='true')
+					|  外島
+				p.pinkred.any_price(data-mark="NT$") 220
+		.text-right
+			button.btn.btn_black(type='button') 確定

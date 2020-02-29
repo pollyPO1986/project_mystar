@@ -1,0 +1,192 @@
+// skincare
+.flex-list {
+    @include flexbox(flex, nowrap, space-between, center);
+    li {
+        @include table-up-width {
+            margin-right: 10px;
+            flex: 0 1 calc((1140px - 30px) / 4);
+        }
+        @include table-width {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        @include phone-width {
+            flex: 100%;
+        }
+        &:nth-child(4n) {
+            @include table-up-width {
+                margin-right: 0;
+            }
+        }
+        >.radio-inline,
+        >.checkbox-inline {
+            display: block;
+            padding-left: 0;
+            @include phone-width() {
+                margin-bottom: 10px;
+                margin-right: 10px;
+            }
+            &:hover {
+                >label {
+                    @include pc-width {
+                    		color: $white;
+                    		background: $orangepink;
+                    }
+                }
+            }
+        }
+        label {
+            font-weight: 400;
+            background: $whitegrey;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="radio"]+label,
+        input[type="checkbox"]+label {
+            color: darken($grey, 20%);
+            cursor: pointer;
+            border-radius: 10px;
+            display: block;
+            padding: 15px;
+            margin-bottom: 0;
+            text-align: center;
+            transition: all .2s ease-in;
+            @include table-width() {
+                padding: 15px;
+            }
+        }
+        input[type="radio"]:checked+label,
+        input[type="checkbox"]:checked+label {
+            color: $white;
+            background: $orangepink;
+            &:before {
+            		color: $white;
+                content: '\2714';
+                margin-right: 5px;
+		            &:active {
+		            		color: $white;
+		            }
+            }
+        }
+    }
+}
+
+.care_list {
+    margin-bottom: 36px;
+    >li {
+        @include rem(font-size, 1.8rem);
+        +li {
+            margin-top: 80px;
+        }
+        h4 {
+            font-weight: 400;
+            letter-spacing: 1px
+        }
+        >.flex-list {
+            margin-top: 30px;
+        }
+        &:nth-child(3),
+        &:nth-child(4) {
+            .flex-list {
+            		@include pc-width {
+                    @include flexbox(flex, wrap, flex-start, center);
+                }
+                @include spc-width {
+                    @include flexbox(flex, wrap, space-between, center);
+                }
+                @include table-width {
+                    @include flexbox(flex, wrap, space-around, center);
+                }
+                >li {
+                    margin-bottom: 10px;
+                    @include spc-width {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        &:nth-child(3) {
+            .flex-list {
+            		@include pc-width {
+                    @include flexbox(flex, wrap, center, center);
+                }
+            }
+        }
+        &:nth-child(4) {
+            .flex-list {
+                >li {
+                    @include pc-width {
+                    		flex: 0 1 calc((1140px - 30px) / 3);
+                    }
+                    &:nth-child(3n) {
+                    		margin-right: 0;
+                    }
+                    &:nth-child(4n) {
+                    		margin-right: 10px;
+                    }
+                }
+            }
+        }
+        >.flex-list {
+            @include table-width {
+                @include flexbox(flex, wrap, space-around, center);
+            }
+            li {
+                line-height: 1;
+                @include table-width {
+                    // flex: 0 1 calc((1140px - 30px) / 4);
+                }
+                label {
+                    @include table-width {
+                        @include rem(font-size, 1.5rem);
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+p.text-center+.col_box {
+    margin-top: 50px;
+}
+
+#skincare {
+    position: fixed;
+    @include pc-width {
+        left: calc(50% + 590px);
+        top: 286px;
+    }
+    @include spc-width {
+        right: 20px;
+        top: 200px;
+    }
+    @include table-width {
+        display: none;
+    } 
+    // position: absolute;
+    // right: -38px;
+    // top: 40px;
+    z-index: 100;
+    transition: all .5s ease;
+    a {
+        background: $black;
+        border-radius: 8px;
+        color: $white;
+        display: inline-block;
+        font-weight: 300;
+        letter-spacing: 2px;
+        line-height: 3;
+        width: 50px;
+        height: 112px;
+        writing-mode: vertical-lr;
+        text-transform: capitalize;
+        transition: all .5s ease;
+        padding: 10px 0;
+        &:hover {
+            background: $buttonbeige;
+        }
+    }
+}

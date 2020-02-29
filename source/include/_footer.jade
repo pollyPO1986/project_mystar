@@ -1,0 +1,78 @@
+.container
+	.row
+		.col-xs-12
+			.bible
+				p 務要在主面前自卑 主就必叫你們升高
+				small.grey ( 雅各書第4章 第10節 )
+footer
+	.footer_navbar
+		ul.list-unstyled
+			li
+				a(href="footer_notice.html") 購物說明
+			li
+				a(href="footer_members.html") 會員權益
+			li
+				a(href="footer_service.html") 服務條款
+			li
+				a(href="footer_privacy.html") 隱私權政策
+			li
+				a(href="fun_faq.html") 常見問題
+			li
+				a(href="contact.html") 客服中心
+	.container
+		.row
+			.col-xs-12.col-sm-3.col-md-3
+				.footer_logo
+					img.img-responsive(src="images/footer_logo.svg", alt="Mystar")
+			.col-xs-12.col-sm-4.col-md-6
+				ul.list-unstyled.footer_media
+					li
+						a(href="https://www.facebook.com/%E5%B0%8F%E8%91%89%E8%80%81%E5%B8%AB-Mystar-598681387146062/", target="_blank")
+							i.fi.flaticon-facebook
+					li
+						a(href="javascript:;", target="_blank")
+							i.fi.flaticon-youtube
+					li
+						a(href="javascript:;", target="_blank")
+							i.fi.flaticon-line
+			.col-xs-12.col-sm-5.col-md-3
+				.footer_emailbox
+					p 訂閱電子報
+					form.form-inline.mt10
+						.form-group
+							label.sr-only(for='') Email
+							input.form-control(type='email',id='' ,placeholder='mystar@example.com')
+						button.btn.btn-primary(type='submit') 訂閱
+
+	p.copyright.text-center.hidden-xs
+		| Copyright &copy; 2018 明馨美容企業有限公司 MyStar all right reserved Co., 網頁設計：
+		a.web_author(href='https://yaii.com.tw/', target='_blank', rel='nofollow') 雅藝設計
+
+	p.copyright.text-center.visible-xs
+		|&copy; 2018 明馨美容企業有限公司 
+		br
+		|網頁設計：
+		a.web_author(href='https://yaii.com.tw/', target='_blank', rel='nofollow') 雅藝設計
+
+	#epaper
+		.paperbox
+			.paper_button
+					button.btn.btn_black(type='button')
+						i.fi.flaticon-memdata
+						|  獲得200元美麗金
+			.paper_ad
+				.paper_header.clearfix
+					button.close(type='button')
+						span &times;
+				.paper_content
+					h3.epaper 請立即訂閱電子報
+						br
+						| 可享200元美麗金
+						br 
+						small (請驗證資料完成會員資格)
+					a.btn.btn-block.btn-primary.mt20(role='button', href='topnav_login.html') 立即加入會員
+	
+#gotop
+		
+script(type='text/javascript', src='js/vendors.js')
+script(type='text/javascript', src='js/style.js')

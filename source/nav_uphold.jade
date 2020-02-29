@@ -1,0 +1,34 @@
+extend layout/_layout.jade
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active Mystar的堅持
+block content
+	.col-xs-12.col-md-10.col-md-offset-1
+		.title.news
+			h2 Mystar的堅持
+		.textedit
+			h3 Mystar的四大堅持：
+			ul.row.uphold_list
+				li.col-xs-6 
+					img.img-responsive(src="images/uphold/uphold_01.jpg", alt="Mystar")
+					|堅持一律採用歐美日等先進國家生產之保養品原料
+				li.col-xs-6 
+					img.img-responsive(src="images/uphold/uphold_02.jpg", alt="Mystar")
+					|堅持由歐盟認證ISO 22716之GMP化妝品廠製造生產
+				li.col-xs-6 
+					img.img-responsive(src="images/uphold/uphold_03.png", alt="Mystar")
+					|堅持固定期限送檢SGS，避免重金屬與塑化劑污染
+				li.col-xs-6 
+					img.img-responsive(src="images/uphold/uphold_04.png", alt="Mystar")
+					|堅持完全符合衛生署化妝品法規以保障消費者權益
+
+
+block lightbox
+	//- lightbox
+		

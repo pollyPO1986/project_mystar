@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+	head
+		include ../include/_head.jade
+	body
+		include ../include/_navbar.jade
+		
+		.content
+			.container
+				.row
+					.col-xs-12
+						block breadcrumb
+					.col-xs-12.col-lg-3
+						block sidenav
+					.col-xs-12.col-lg-9
+						block content
+
+		include ../include/_footer.jade
+
+		block lightbox
+			

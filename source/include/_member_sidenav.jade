@@ -1,0 +1,35 @@
+ul.mem_sidenav.hidden-sm.hidden-xs
+	li
+		.mem_namebox
+			a.mem_photo(href='javascript:;',style='background-image:url(images/user_sample.png);')
+			// 圖片尺寸 260*260
+			h3 會員名稱
+			p 美麗金：300
+	li
+		a(href="member_beauty.html") 美麗金使用說明
+	li
+		a(href="member_bonus.html") 美麗金(紅利點數)
+	li
+		a(href="member_history.html") 消費訂單紀錄
+	li
+		a(href="member_wishlist.html") 我的最愛清單
+	li
+		a(href="member_service.html") 客服聯繫紀錄
+	li
+		a(href="member_info.html") 會員資料管理
+
+ul.mem_sidenav.hidden-lg.hidden-md
+	li
+		.mem_namebox
+			a.mem_photo(href='javascript:;',style='background-image:url(images/user_sample.png);')
+			// 圖片尺寸 260*260
+			h3 會員名稱
+			p 美麗金：300
+	li
+		select.form-control.selectpicker(data-style='btn_linestyle', onchange='location.href=this.options[this.selectedIndex].value')
+			option(value='member_beauty.html') 美麗金使用說明
+			option(value='member_bonus.html') 美麗金(紅利點數)
+			option(value='member_history.html') 消費訂單紀錄
+			option(value='member_wishlist.html') 我的最愛清單
+			option(value='member_service.html') 客服聯繫紀錄
+			option(value='member_info.html', selected='') 會員資料管理

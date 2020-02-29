@@ -1,0 +1,53 @@
+.btn {
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+}
+
+.btn_black {
+    color: $white;
+    background-color: $black;
+    border-color: $black;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus,
+    &:active {
+    		color: $white;
+        background-color: $buttonbeige;
+        border-color: $buttonbeige;
+    }
+}
+
+.btn_grey {
+    color: $black;
+    background-color: lighten($grey,30%);
+    border-color: transparent;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+    		color: $black;
+        background-color: lighten($grey,35%);
+        border-color: lighten($grey,35%);
+    }
+}
+
+.btn_linestyle {
+    color: $grey;
+    background-color: $white;
+    border-color: lighten($grey,25%);
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+    		color: $grey;
+        background-color: lighten($grey,30%);
+        border-color: lighten($grey,25%);
+    }
+}

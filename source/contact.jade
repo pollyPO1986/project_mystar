@@ -1,0 +1,76 @@
+extend layout/_layout.jade
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active 聯絡我們
+block content
+	.col-xs-12.col-md-10.col-md-offset-1
+		.title.news
+			h2 聯絡我們
+		ul.dot_liststyle
+			li 客服專線：
+				a(href="tel:+0800123456") 0800-123456
+			li 客服時間：09:00~18:00
+		hr
+		p 或是填寫表格資料，我們將盡快聯絡您
+		form.form-horizontal.contact_form
+			.form-group
+				label.col-sm-2.control-label(for='')
+					span.beige * 
+					| 姓名
+				.col-sm-10
+					input.form-control(type='text', id='', placeholder='請輸入您的大名')
+			.form-group
+				label.col-sm-2.control-label(for='') 
+					span.beige * 
+					| 性別
+				.col-sm-10.col-md-9
+					label.radio-inline(for='female')
+						input(type='radio',id='female', name='sexual', value='1', checked)
+						i.fa.fa-circle(aria-hidden='true')
+						|  女
+					label.radio-inline(for='male')
+						input(type='radio',id='male', name='sexual', value='2')
+						i.fa.fa-circle(aria-hidden='true')
+						|  男
+			.form-group
+				label.col-sm-2.control-label(for='')
+					span.beige * 
+					| 電子信箱
+				.col-sm-10
+					input.form-control(type='email', id='', placeholder='請輸入您的電子信箱')
+			.form-group
+				label.col-sm-2.control-label(for='')
+					span.beige * 
+					| 訊息主題
+				.col-sm-10
+					select.form-control.selectpicker(data-style='btn_grey')
+						option 主題一
+						option 主題二
+						option 主題三
+			.form-group
+				label.col-sm-2.control-label(for='')
+					span.beige * 
+					| 意見
+				.col-sm-10
+					textarea.form-control(rows="5")
+			.form-group
+				.col-sm-offset-2.col-sm-10
+					.checkbox
+						label
+							input(type='checkbox')
+							i.fa.fa-check(aria-hidden='true')
+							|  我希望收到明馨電子報
+			.form-group
+				.col-sm-offset-2.col-sm-10
+					button.btn.btn-block.btn_black(type='submit') 送出
+
+
+block lightbox
+	//- lightbox
+		

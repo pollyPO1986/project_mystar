@@ -1,0 +1,62 @@
+extend layout/_layout.jade
+
+mixin product(bg,name,sub)
+	.pic-box
+		.hoverimg.square(style=bg)
+			a.overlay(href="products_detail.html") 
+				.overlay_content MORE
+		.caption
+			a(href="products.html")
+				h3=name
+			p.sub=sub
+		.shop_funbox
+			del 原價：2,000
+			p.price(data-mark="NT$") 1,600
+			ul.list-inline.shop_btn
+				li
+					button.btn.btn-link(type="button", data-toggle="tooltip", data-placement="top", title="加到最愛")
+						i.fa.fa-heart-o
+				li
+					button.btn.btn-link(type="button", data-toggle="tooltip", data-placement="top", title="加到購物車")
+						i.fi.flaticon-cart
+
+block top_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb
+					li
+						a(href='index.html') Mystar
+					li.active 搜尋結果
+block content
+	.col-xs-12
+		.col_box
+			.titlebar
+				h2 清潔系列
+			.row.pro_list
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_02.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_03.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_04.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+		.col_box
+			.titlebar
+				h2 保濕系列
+			.row.pro_list
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_02.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+		.col_box
+			.titlebar
+				h2 柔敏系列
+			.row.pro_list
+				.col-xs-6.col-sm-3
+					+product('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明一二三四五六七')
+
+block lightbox
+	//- lightbox
+		

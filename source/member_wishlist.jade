@@ -1,0 +1,68 @@
+extend layout/_layout_side_l.jade
+
+mixin cart(pic,name,sub,price)
+	tr
+		td(class="visible-xs")
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td
+			.keep_img
+				a(href="products_detail.html",style=pic)
+		td.pic-box
+			.caption
+				a(href="products.html")
+					h3=name
+				p.sub=sub
+		td
+			p.any_price(data-mark='NT$')=price
+		td.pro_sellinfo
+			.wan-spinner.pro_num
+				a.minus(href='javascript:void(0)') -
+				input(type='text', value='1')
+				a.plus(href='javascript:void(0)') +
+		td
+			a(href="javascript:;") &#9747;
+
+block breadcrumb
+	ol.breadcrumb
+		li
+			a(href='index.html') Mystar
+		li
+			a(href='javascript:;') 會員中心
+		li.active 我的最愛清單
+
+block sidenav
+	include include/_member_sidenav.jade
+
+block content
+	.title
+		h2 我的最愛清單
+	table.table.tablestyle.cart_tb.wishlist(data-toggle-column="first")
+			thead
+				tr
+					th(class="visible-xs")
+					th
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					th 商品照
+					th 商品名稱
+					th(data-breakpoints='xs') 價格
+					th(data-breakpoints='xs') 數量
+					th(data-breakpoints='xs') 刪除
+			tbody
+				+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+				+cart('background-image:url(images/products/products_260x260_01.png);','超緊顏白金淡斑精粹組','次標說明','3,000')
+	.cart_checkbox
+			p
+				a.btn.btn_black(role='button', href='cart.html') 
+					i.fi.flaticon-cart
+					|  加到購物車
+				
+block lightbox
+	//- lightbox
+		
